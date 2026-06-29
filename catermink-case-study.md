@@ -12,28 +12,30 @@ Caterers juggle inquiries, quotes, events, clients and staff across spreadsheets
 
 ## What Catermink is
 
-A multi-tenant web application where each catering business gets an isolated workspace covering:
+A web application where each catering business gets its own isolated workspace covering:
 
-- **Inquiries** — public inquiry forms feed straight into the pipeline.
-- **Quotes** — branded PDF offers generated on the fly.
-- **Clients & events** — a calendar-driven view of bookings.
-- **Staff** — shift planning with role-based access.
+- **Inquiries** — public, multi-step forms feed straight into the pipeline.
+- **Quotes** — branded PDF offers with automatic numbering.
+- **Menu & services** — a reusable catalogue of dishes and add-ons (labour, transport, rentals) that powers both the offer builder and the public forms.
+- **Calendar & events** — bookings by status, with sync to Google, Apple and Outlook via ICS.
+- **Staff** — shift planning with confirmations, substitutes and role-based access.
+- **Automated email** — confirmations, staff notifications and password resets, sent through Resend.
 
 ## Architecture
 
-- **Multi-tenancy from day one.** Every record is scoped to a tenant, so data never leaks across workspaces. Tenant resolution happens at the edge before any business logic runs.
-- **Domain isolation.** The admin app, the public inquiry forms and the client-facing surface are served on separate subdomains, each with its own trust boundary.
+- **Tenant isolation by default.** Every record is scoped to a tenant, so data never leaks across workspaces. Tenant resolution runs in a request proxy, before any route handler executes.
+- **Domain isolation.** The authenticated admin app and the public inquiry forms run on separate subdomains (`admin.` and `forms.`), each with its own trust boundary; the marketing site is a separate codebase.
 - **Role-based access.** Three levels — owner, admin and staff — gate what each user can see and do inside a workspace.
 - **Auth.** Stateless, token-based sessions verified on every request.
 - **Documents.** Quotes are rendered to PDF server-side from structured data.
 
-## Tech decisions
+## The stack
 
 - **Next.js 16 (App Router) + React 19** — one framework for the marketing surface, the authenticated app and the API, with server components keeping the client bundle lean.
 - **Turso / libSQL + Prisma** — SQLite semantics with a hosted, replicated edge database. Local development runs against a file; production runs against Turso. Prisma gives typed access and predictable migrations.
 - **Sentry** — errors and performance traced across the whole app, so production issues surface with context instead of guesswork.
 - **Vercel** — preview deploys per branch and a clean path from staging to production.
-- **TypeScript + Zod end to end** — types at the boundaries, validation at the edges, no `any`.
+- **TypeScript + Zod throughout** — strict types in code, runtime validation at the boundaries, no `any` in app code.
 
 ## Why these tradeoffs
 
@@ -71,7 +73,7 @@ _All screenshots use demo data._
 
 ## Status
 
-Running in production with a separate staging environment and a dedicated QA workflow.
+Live in production with real catering businesses, backed by a separate staging environment and a dedicated QA workflow.
 
 ---
 
