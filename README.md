@@ -2,7 +2,7 @@
 
 # Adam Kolek
 
-**Founder of [Catermink](https://catermink.com)** — building the operating system for caterers
+**Co-founder of [Catermink](https://catermink.com)** — building the operating system for caterers
 
 <p>
   <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"></a>
