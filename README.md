@@ -19,7 +19,7 @@
 
 ---
 
-I'm Adam — founder of **Catermink**. I work across the whole thing: product decisions, the full-stack app, and the infrastructure it runs on.
+I'm Adam — co-founder of **Catermink**. I work across the whole thing: product decisions, the full-stack app, and the infrastructure it runs on.
 
 ### 🍽 [Catermink →](https://catermink.com) — live in production
 
