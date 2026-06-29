@@ -4,6 +4,8 @@
 
 > How I designed and built **[Catermink](https://catermink.com)** — a multi-tenant SaaS that runs the back office for catering businesses. This is a high-level architecture write-up; the product source is private.
 
+![Catermink dashboard — open inquiries, offers in progress and confirmed events at a glance](./screenshots/dashboard.png)
+
 ## The problem
 
 Caterers juggle inquiries, quotes, events, clients and staff across spreadsheets, inboxes and paper. The work is bursty and deadline-driven, and a missed detail costs a booking. Catermink replaces that patchwork with one system built around how catering actually runs.
@@ -41,7 +43,31 @@ A multi-tenant web application where each catering business gets an isolated wor
 
 ## Screenshots
 
-_Coming soon._
+_All screenshots use demo data._
+
+**Bookings calendar** — every event colour-coded by status (new, in progress, sent, confirmed, done).
+
+![Bookings calendar with colour-coded event statuses](./screenshots/calendar.png)
+
+**Staff scheduling** — drag people onto a confirmed event; track who's confirmed, who's a substitute, and who declined.
+
+![Drag-and-drop staff scheduling with confirmations, substitutes and declines](./screenshots/shifts.png)
+
+**Shareable inquiry forms** — copy a link or embed a form on the caterer's own site, with or without prices.
+
+![Inquiry forms with copy-link and embed options](./screenshots/forms.png)
+
+**Roles & permissions** — owner, admin and staff, each with a clearly scoped permission matrix.
+
+![Access management with a per-role permission matrix](./screenshots/access.png)
+
+**The public inquiry form** — guests pick a date (with live availability), time, location and headcount…
+
+![Public inquiry form — event details step with availability calendar](./screenshots/inquiry-details.png)
+
+…and finish with their contact details. The caterer receives a structured lead instead of a vague email.
+
+![Public inquiry form — contact details step](./screenshots/inquiry-contact.png)
 
 ## Status
 
