@@ -2,7 +2,7 @@
 
 ← [Back to profile](./README.md)
 
-> How I designed and built **[Catermink](https://catermink.com)** — a multi-tenant SaaS that runs the back office for catering businesses. This is a high-level architecture write-up; the product source is private.
+> How I designed and built **[Catermink](https://catermink.com)** — a multi-tenant system that runs the back office for catering businesses. This is a high-level architecture write-up; the product source is private.
 
 ![Catermink dashboard — open inquiries, offers in progress and confirmed events at a glance](./screenshots/dashboard.png)
 
